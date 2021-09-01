@@ -1,0 +1,60 @@
+.slogan {
+
+    @include bg_image_center("../assets/images/brooke-lark-unsplash.jpg") ;
+    height: auto;
+    
+    &__wrapper {
+        width: 50%;
+    }
+
+    &__heading {
+        font-size: 8.5rem;
+        font-weight: 800;
+        padding-top: 15rem;
+        color: $primary-color;
+        color:red;
+        opacity: 0;
+
+        @include response(mobile) {  
+            font-size: 5.5rem;
+            padding-top: 10rem; 
+        }
+       
+    }
+
+    &__desc {
+        font-size: 1.4rem;
+        margin-top: 5rem;
+        line-height: 2.4rem;
+        color: $text-color;
+        opacity: 0;
+    }
+
+    .btn{
+        margin-top: 5rem;
+        opacity: 0;
+        margin-bottom: 15rem; 
+
+        @include response(mobile) {  
+            margin-bottom: 10rem; 
+        }
+    }
+
+    // animation
+    .play-on-scroll.start {
+        .slogan__heading{
+            animation: left_to_right 1s ease-in-out forwards;
+        }
+        .slogan__desc {
+            animation: left_to_right 1s $delay2 ease-in-out forwards;
+        }
+        .slogan__btn {
+            animation: left_to_right 1s $delay4 ease-in-out forwards;
+        }
+    }
+
+
+   
+
+}
+

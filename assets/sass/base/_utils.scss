@@ -1,0 +1,32 @@
+.container {
+    max-width: 144rem;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.content {
+  margin-left: 2rem;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.back-to-top {
+    
+    position: fixed;
+    font-size: 5rem;
+    bottom: 30px;
+    right: 30px;
+    color:$primary-color;
+    transition: all 1s;
+    
+    &.invisible{
+        opacity: 0;
+    }
+
+    &:hover{
+        opacity: 1;
+        transform: scale(0.9);
+    }
+}

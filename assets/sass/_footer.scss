@@ -1,0 +1,70 @@
+.footer{
+    background-image: url('../assets/images/nordwood-themes-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat; 
+
+    &__wrapper {
+       min-height: calc(100vh - 6.5rem);
+       display: grid;
+       grid-template-columns: 5fr 2fr 3fr;
+    }
+
+    &__item{
+        display: block;
+        margin: 14.4rem 0;
+        padding: 0 1.6rem;
+        font-size: 1.6rem; 
+        color: white;
+        line-height: 2.5rem; 
+
+        &--heading{
+            margin-top:1.6rem;  
+            font-size: 2.4rem; 
+            color: $primary-color;
+            font-weight: bold;
+        }
+
+        &--detail {
+            margin-top: 2.5rem;
+            font-size: 1.6rem; 
+            font-weight: 500;
+        }
+    }
+
+    &__about-item--link {
+        display: block;
+        color: white;
+    }
+
+    &__subcrible {
+        &-form {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3.2rem;
+            border: 2px solid $primary-color;
+            border-radius: 3.2rem;
+            padding: 1.6rem;
+            line-height: normal; 
+            
+            &--email {
+                color: $primary-color;
+                flex-grow: 1;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                box-sizing: border-box;
+            }
+
+            .btn--subrible{
+                font-size: 1.333rem;
+                font-weight: 600;
+                padding: 0.8rem 1.6rem;
+                border-radius: 1.6rem;
+                border: none;
+            }
+
+        }
+    }
+   
+}

@@ -1,0 +1,53 @@
+.header {
+  @extend .container;
+  width: 100%;
+  position: fixed;
+  background-color: #F0F3F7;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.menu {
+  &__wrapper {
+    @include flexbox(center, space-between);
+    padding: 0.8rem 2rem;
+  }
+
+  &__home {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  &-list {
+    @include flexbox();
+    @include response(mobile) {  
+      display: none;   
+    }
+  }
+
+  &__link {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $grey;
+    padding: 1.3rem 2.4rem;
+  
+    &--active,
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 1.6rem;
+    }
+
+
+    & + & {
+      margin-left: 1.6rem;
+    }
+  }
+
+  &__cart {
+    font-size: 3.15rem;
+    color: $primary-color;
+    padding: 0.8rem 0.8rem;
+  }
+}

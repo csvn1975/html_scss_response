@@ -1,0 +1,151 @@
+.food {
+
+    @include bg_image_center("../assets/images/katherine-chase-unsplash.jpg", 200vh);
+    height: auto;
+    padding: 10rem 0;
+
+    &__wrapper {
+        height: auto;
+        padding: 6.4rem;
+        background-color: white;
+        border-radius: 3.2rem;
+    }
+
+    &__heading{
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: center;
+        & > span{
+            color: $primary-color;
+        }
+    }
+
+    &__desc{
+        color: #000;
+        margin-top: 3.5rem;
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+        text-align: center;
+    }
+    
+    &__menu-list {
+        @include flexbox();
+        margin-top: 3.5rem;
+        overflow-x: auto; // scroll
+        // scrollbar invisible
+        &::-webkit-scrollbar{
+            display:none;   
+        }
+    }
+
+    &__menu-link{
+        display:flex;
+        flex-shrink: 0; // die Breite nicht automatich verkleinern
+        padding: 0.8rem 3.5rem;
+        opacity: 0;
+    }
+
+    // mit grid
+    &__card-list{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+         grid-column-gap: 1rem;
+        // grid-row-gap: 2rem;
+    }
+
+    &__card{
+        &-item {
+            aspect-ratio: 2/3;
+            border-radius: 3.2rem;
+            margin: 5rem 0;
+            padding: 1.6rem;
+            transition: all 1s;
+            box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+            
+            &:hover {
+            box-shadow: 1px 1px 10px 5px rgba(0,0,0,0.3);
+            }
+        }
+        
+        &-image{
+            width:100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 3.2rem;
+            overflow:hidden;
+
+            img {
+                width:100%;
+                height:100%;
+                object-fit: cover;
+                object-position: center;
+                transition: all 0.5s;
+
+                &:hover {
+                    transform: scale(1.5) rotate(45Deg)
+                }
+            }
+        }
+
+        &-bottom{
+            @include flexbox(flex-start, space-between);
+            margin-top: 5rem;
+            padding: 0 1.6rem;
+            font-size: 1.8rem;
+        }
+
+
+        &-desc{
+            font-weight: 700;
+        }
+    
+        &-price{
+            margin-top: 1rem;
+            font-size: 1.4rem
+        }
+
+        &-add{
+            color: $primary-color;
+        }
+
+    }
+}
+
+// animation buttons food-menus
+.food__menu-list.play-on-scroll.start {
+    @for $i from 1 through 10 {
+        .food__menu-link:nth-child(#{$i}){
+            animation: fade 1s;
+            animation-timing-function: ease-in;
+            animation-delay: $i*100ms;
+            animation-fill-mode: forwards;
+        }
+      }
+}
+
+.food__card-item.play-on-scroll.start{  
+    animation: bottom_to_top 1s ease-in forwards;
+}
+
+
+.food{
+    @include response(tab_tablet) {  
+        &__wrapper {
+            padding: 2rem;
+        }
+        &__card-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include response(mobile) {  
+        &__wrapper {
+            padding: 1rem;
+        }
+        &__card-list {
+            grid-template-columns: 1fr;
+            grid-column-gap: 0;
+        }    
+    }
+}
+
+
